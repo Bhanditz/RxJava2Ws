@@ -20,6 +20,12 @@ dependencies {
 }
 ```
 
+TODO:
+-------
+1. Filters(StringMessageFilter pass only String Messages)
+2. Serializer/Deserializer (GSON)
+
+
 Site
 -------
 https://tagantroy.github.io/RxJava2Ws/
