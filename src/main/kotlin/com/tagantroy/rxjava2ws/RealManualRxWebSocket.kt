@@ -1,5 +1,7 @@
 package com.tagantroy.rxjava2ws
 
+import com.tagantroy.rxjava2ws.listeners.RxMultipleWebSocketListener
+import com.tagantroy.rxjava2ws.listeners.RxWebSocketListener
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.disposables.Disposable

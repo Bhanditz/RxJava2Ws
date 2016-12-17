@@ -2,10 +2,11 @@ group 'com.tagantroy'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.0.5'
+    ext.kotlin_version = '1.0.5-3'
 
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -19,6 +20,7 @@ sourceCompatibility = 1.5
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {

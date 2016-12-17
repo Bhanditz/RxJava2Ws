@@ -10,4 +10,5 @@ sealed class WebSocketEvent(val webSocket: WebSocket?){
     class StringMessageEvent(webSocket: WebSocket?, val text: String?) : WebSocketEvent(webSocket)
     class FailureEvent(webSocket: WebSocket?, val t: Throwable?, val response: Response?) : WebSocketEvent(webSocket)
     class ClosedEvent(webSocket: WebSocket?, val code: Int, val reason: String?) : WebSocketEvent(webSocket)
+    class ClosingEvent(webSocket: WebSocket?, val code: Int, val reason: String?) : WebSocketEvent(webSocket)
 }

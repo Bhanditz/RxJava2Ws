@@ -1,4 +1,4 @@
-package com.tagantroy.rxjava2ws
+package com.tagantroy.rxjava2ws.listeners
 
 import okhttp3.Response
 import okhttp3.WebSocket
@@ -7,17 +7,17 @@ import okio.ByteString
 
 class RxMultipleWebSocketListener : WebSocketListener() {
 
-    private val items: MutableList<WebSocketListener> = mutableListOf()
+    internal val listeners : MutableList<WebSocketListener> = mutableListOf()
 
     fun addListener(listener: WebSocketListener) {
         synchronized(this,{
-            items.add(listener)
+            listeners.add(listener)
         })
     }
 
     fun removeListener(listener: WebSocketListener) {
         synchronized(this,{
-            items.remove(listener)
+            listeners.remove(listener)
         })
     }
 
@@ -47,7 +47,7 @@ class RxMultipleWebSocketListener : WebSocketListener() {
 
     private inline fun toAll(f: (WebSocketListener) -> Unit) {
         synchronized(this,{
-            items.forEach {
+            listeners.forEach {
                 f(it)
             }
         })

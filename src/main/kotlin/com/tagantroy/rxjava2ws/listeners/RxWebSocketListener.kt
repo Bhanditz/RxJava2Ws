@@ -1,5 +1,6 @@
-package com.tagantroy.rxjava2ws
+package com.tagantroy.rxjava2ws.listeners
 
+import com.tagantroy.rxjava2ws.WebSocketEvent
 import io.reactivex.FlowableEmitter
 import okhttp3.Response
 import okhttp3.WebSocket
@@ -16,7 +17,7 @@ class RxWebSocketListener(private val emitter: FlowableEmitter<WebSocketEvent>) 
     }
 
     override fun onClosing(webSocket: WebSocket?, code: Int, reason: String?) {
-        emitter.onNext(WebSocketEvent.ClosedEvent(webSocket, code, reason))
+        emitter.onNext(WebSocketEvent.ClosingEvent(webSocket, code, reason))
     }
 
     override fun onMessage(webSocket: WebSocket?, text: String?) {
